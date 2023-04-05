@@ -1,3 +1,3 @@
 export default function Question(props) {
-    return <p>{props.question.text}</p>
+    return <h2>{props.question.text}</h2>
 }

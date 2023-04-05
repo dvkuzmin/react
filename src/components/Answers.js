@@ -40,7 +40,7 @@ class Answers extends Component {
                 return this.props.onHandleNext(this.state)}
             }>
                 {list_answers}
-                <button type='submit'>Ответить</button>
+                <button className='next-button' type='submit'>Ответить</button>
             </form>
         )
     }    

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Fireworks from 'fireworks-js';
+
 
 class Result extends Component {
     state = {
@@ -6,7 +8,7 @@ class Result extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://127.0.0.1:8000/test/'
+        const url = 'http://127.0.0.1:8000/test/questions/'
         
         fetch(url, {
             method: 'POST',
@@ -22,11 +24,29 @@ class Result extends Component {
                 })
             }
         )
+        const fireworks = new Fireworks(document.getElementById('fireworks-container'));
+
+        // Запускаем анимацию фейерверка
+        fireworks.start();
+    
+        // Останавливаем анимацию фейерверка через 5 секунд
+        setTimeout(() => {
+          fireworks.stop();
+        }, 3000);
     }
 
     render() {
         const { data } = this.state
-        return <p>{data}</p>
+
+        return  (
+            <div className="conainer">
+                <div id="fireworks-container">
+                </div>
+                <h2>{data}</h2>
+            </div>
+            
+
+        )
     }
 }
 
