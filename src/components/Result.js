@@ -8,7 +8,7 @@ class Result extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://127.0.0.1:8000/test/questions/'
+        const url = 'https://dj-quiz.onrender.com/test/questions/'
         
         fetch(url, {
             method: 'POST',

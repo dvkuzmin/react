@@ -20,7 +20,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://127.0.0.1:8000/test/categories/'
+        const url = 'https://dj-quiz.onrender.com/test/categories/'
 
         fetch(url)
             .then((result) => result.json())
@@ -43,7 +43,7 @@ class App extends Component {
 
     onChooseCategory = (categoryId) => {
         this.setState({categoryId: categoryId})
-        const url = 'http://127.0.0.1:8000/test/questions/' + `${categoryId}/`
+        const url = 'https://dj-quiz.onrender.com/test/questions/' + `${categoryId}/`
 
         fetch(url)
             .then((result) => result.json())
